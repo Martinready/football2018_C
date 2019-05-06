@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tmember">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fuserid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fpwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="femail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="torder">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="forderguid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fuserid" Type="nvarchar" MaxLength="50" />
+    <Property Name="freceiver" Type="nvarchar" MaxLength="50" />
+    <Property Name="femail" Type="nvarchar" MaxLength="50" />
+    <Property Name="faddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="fdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="torderdetail">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="forderguid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fuserid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fpid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="fprice" Type="int" />
+    <Property Name="fqty" Type="int" />
+    <Property Name="fisapproved" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tproduct">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fpid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="fprice" Type="int" />
+    <Property Name="fimg" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="shoppingModelStoreContainer">
+    <EntitySet Name="tmember" EntityType="Self.tmember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="torder" EntityType="Self.torder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="torderdetail" EntityType="Self.torderdetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tproduct" EntityType="Self.tproduct" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

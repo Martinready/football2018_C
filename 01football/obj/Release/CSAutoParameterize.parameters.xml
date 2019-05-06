@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="demoEntities-Web.config Connection String" description="demoEntities 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=apple0408.database.windows.net;initial catalog=demo5;integrated security=False;user id=errmartin3;password=Atryme338;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\errma\\Desktop\\小專題\\01football\\01football\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='demoEntities']/@connectionString" />
+  </parameter>
+  <parameter name="demoEntities1-Web.config Connection String" description="demoEntities1 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="metadata=res://*/Models.carts.csdl|res://*/Models.carts.ssdl|res://*/Models.carts.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=apple0408.database.windows.net;initial catalog=demo5;integrated security=False;user id=errmartin3;password=Atryme338;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\errma\\Desktop\\小專題\\01football\\01football\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='demoEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="demoEntities2-Web.config Connection String" description="demoEntities2 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="metadata=res://*/Models.Model2.csdl|res://*/Models.Model2.ssdl|res://*/Models.Model2.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=apple0408.database.windows.net;initial catalog=demo5;integrated security=False;user id=errmartin3;password=Atryme338;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\errma\\Desktop\\小專題\\01football\\01football\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='demoEntities2']/@connectionString" />
+  </parameter>
+  <parameter name="shoppingEntities-Web.config Connection String" description="shoppingEntities 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="metadata=res://*/Models.shopping.csdl|res://*/Models.shopping.ssdl|res://*/Models.shopping.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=apple0408.database.windows.net;initial catalog=shopping;integrated security=False;user id=errmartin3;password=Atryme338;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\errma\\Desktop\\小專題\\01football\\01football\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='shoppingEntities']/@connectionString" />
+  </parameter>
+</parameters>

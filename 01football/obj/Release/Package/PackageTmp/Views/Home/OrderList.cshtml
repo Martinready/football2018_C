@@ -1,0 +1,63 @@
+﻿@model IEnumerable<_01football.Models.torder>
+
+@{
+    ViewBag.Title = "會員訂單列表";
+}
+
+<h2>會員訂單列表</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.forderguid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuserid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.freceiver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.femail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fdate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.forderguid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fuserid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.freceiver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.femail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.faddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fdate)
+            </td>
+            <td>
+                <a href="@Url.Action("OrderDetail")?forderguid=@item.forderguid" class="btn btn-info">訂單明細</a>
+            </td>
+        </tr>
+    }
+
+</table>
+

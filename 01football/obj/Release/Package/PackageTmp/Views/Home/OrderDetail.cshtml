@@ -1,0 +1,72 @@
+﻿@model IEnumerable<_01football.Models.torderdetail>
+
+@{
+    ViewBag.Title = "訂單明細";
+}
+
+
+
+<h2>訂單明細</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.forderguid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuserid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fpid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fqty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fisapproved)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.forderguid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fuserid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fpid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fisapproved)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.fid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.fid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.fid })
+            </td>
+        </tr>
+    }
+
+</table>

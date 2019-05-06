@@ -1,0 +1,30 @@
+﻿@model List<_01football.Models.team>
+
+<ul data-role="listview" data-filter="true"></ul><!--mark-->
+<link rel="stylesheet" href="~/assets/css/main.css" />
+<h2>模擬世界盃</h2>
+<form action="@Url.Action("Sand")" method="post">
+    <div>
+        <div class="form-group">
+            <span class="control-label col-md-2">隊伍一</span>
+            <div class="col-md-10">
+                <input type="text" id="dd2" name="dd2" required="required" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="control-label col-md-2">隊伍二</span>
+            <div class="col-md-10">
+                <input type="text" id="dd3" name="dd3" required="required" class="form-control" />
+            </div>
+        </div>
+        <input type="submit" value="送出" class="btn btn-default" />
+        <div><img src="~/image/@ViewBag.image1" /></div>@ViewBag.Message1
+        <br />
+
+        <div><img src="~/image/@ViewBag.image2" /></div>@ViewBag.Message2
+        <br />
+        @ViewBag.Message3
+
+    </div>
+
+</form>

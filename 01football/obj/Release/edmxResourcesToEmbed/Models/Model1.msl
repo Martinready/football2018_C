@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demoModelStoreContainer" CdmEntityContainer="demoEntities">
+    <EntitySetMapping Name="plans">
+      <EntityTypeMapping TypeName="IsTypeOf(demoModel.plan)">
+        <MappingFragment StoreEntitySet="plans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="DefaultImageId" ColumnName="DefaultImageId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="IsTypeOf(demoModel.team)">
+        <MappingFragment StoreEntitySet="teams">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="couuntry" ColumnName="couuntry" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="win" ColumnName="win" />
+          <ScalarProperty Name="flat" ColumnName="flat" />
+          <ScalarProperty Name="lose" ColumnName="lose" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="loseball" ColumnName="loseball" />
+          <ScalarProperty Name="GD" ColumnName="GD" />
+          <ScalarProperty Name="score2" ColumnName="score2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="homes">
+      <EntityTypeMapping TypeName="IsTypeOf(demoModel.home)">
+        <MappingFragment StoreEntitySet="homes">
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

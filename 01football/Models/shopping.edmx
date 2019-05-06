@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="shoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tmember">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fuserid" Type="nvarchar" MaxLength="50" />
+          <Property Name="fpwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="femail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="torder">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="forderguid" Type="nvarchar" MaxLength="50" />
+          <Property Name="fuserid" Type="nvarchar" MaxLength="50" />
+          <Property Name="freceiver" Type="nvarchar" MaxLength="50" />
+          <Property Name="femail" Type="nvarchar" MaxLength="50" />
+          <Property Name="faddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="fdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="torderdetail">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="forderguid" Type="nvarchar" MaxLength="50" />
+          <Property Name="fuserid" Type="nvarchar" MaxLength="50" />
+          <Property Name="fpid" Type="nvarchar" MaxLength="50" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="fprice" Type="int" />
+          <Property Name="fqty" Type="int" />
+          <Property Name="fisapproved" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tproduct">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fpid" Type="nvarchar" MaxLength="50" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="fprice" Type="int" />
+          <Property Name="fimg" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="shoppingModelStoreContainer">
+          <EntitySet Name="tmember" EntityType="Self.tmember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="torder" EntityType="Self.torder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="torderdetail" EntityType="Self.torderdetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tproduct" EntityType="Self.tproduct" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="shoppingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tmember">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fpwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="femail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="torder">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="forderguid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="freceiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="femail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="faddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="torderdetail">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="forderguid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fpid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fprice" Type="Int32" />
+          <Property Name="fqty" Type="Int32" />
+          <Property Name="fisapproved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tproduct">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fpid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fprice" Type="Int32" />
+          <Property Name="fimg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="shoppingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tmembers" EntityType="Self.tmember" />
+          <EntitySet Name="torders" EntityType="Self.torder" />
+          <EntitySet Name="torderdetails" EntityType="Self.torderdetail" />
+          <EntitySet Name="tproducts" EntityType="Self.tproduct" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="shoppingModelStoreContainer" CdmEntityContainer="shoppingEntities">
+          <EntitySetMapping Name="tmembers">
+            <EntityTypeMapping TypeName="shoppingModel.tmember">
+              <MappingFragment StoreEntitySet="tmember">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="fuserid" ColumnName="fuserid" />
+                <ScalarProperty Name="fpwd" ColumnName="fpwd" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="femail" ColumnName="femail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="torders">
+            <EntityTypeMapping TypeName="shoppingModel.torder">
+              <MappingFragment StoreEntitySet="torder">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="forderguid" ColumnName="forderguid" />
+                <ScalarProperty Name="fuserid" ColumnName="fuserid" />
+                <ScalarProperty Name="freceiver" ColumnName="freceiver" />
+                <ScalarProperty Name="femail" ColumnName="femail" />
+                <ScalarProperty Name="faddress" ColumnName="faddress" />
+                <ScalarProperty Name="fdate" ColumnName="fdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="torderdetails">
+            <EntityTypeMapping TypeName="shoppingModel.torderdetail">
+              <MappingFragment StoreEntitySet="torderdetail">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="forderguid" ColumnName="forderguid" />
+                <ScalarProperty Name="fuserid" ColumnName="fuserid" />
+                <ScalarProperty Name="fpid" ColumnName="fpid" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="fprice" ColumnName="fprice" />
+                <ScalarProperty Name="fqty" ColumnName="fqty" />
+                <ScalarProperty Name="fisapproved" ColumnName="fisapproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tproducts">
+            <EntityTypeMapping TypeName="shoppingModel.tproduct">
+              <MappingFragment StoreEntitySet="tproduct">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="fpid" ColumnName="fpid" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="fprice" ColumnName="fprice" />
+                <ScalarProperty Name="fimg" ColumnName="fimg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demoModel2StoreContainer" CdmEntityContainer="demoEntities2">
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="demoModel2.contact">
+        <MappingFragment StoreEntitySet="contacts">
+          <ScalarProperty Name="img2" ColumnName="img2" />
+          <ScalarProperty Name="img1" ColumnName="img1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="country1" ColumnName="country1" />
+          <ScalarProperty Name="score1" ColumnName="score1" />
+          <ScalarProperty Name="country2" ColumnName="country2" />
+          <ScalarProperty Name="score2" ColumnName="score2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="demoModel2.team">
+        <MappingFragment StoreEntitySet="teams">
+          <ScalarProperty Name="src" ColumnName="src" />
+          <ScalarProperty Name="score2" ColumnName="score2" />
+          <ScalarProperty Name="GD" ColumnName="GD" />
+          <ScalarProperty Name="loseball" ColumnName="loseball" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="lose" ColumnName="lose" />
+          <ScalarProperty Name="flat" ColumnName="flat" />
+          <ScalarProperty Name="win" ColumnName="win" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="couuntry" ColumnName="couuntry" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

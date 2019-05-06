@@ -1,0 +1,94 @@
+﻿@model List<_01football.Models.contact>
+@{
+    ViewBag.Title = "game";
+}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>比賽賽程</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+    <link href="~/css2/bootstrap.min.css" rel="stylesheet">
+    <!-- FlexSlider -->
+    <link href="~/css2/flexslider.css" rel="stylesheet">
+    <!-- Font awesome CSS -->
+    <link href="~/css2/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/css2/style.css" rel="stylesheet">
+    <!-- Javascript files -->
+    <!-- jQuery -->
+    <script src="~/js2/jquery.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/js2/bootstrap.min.js"></script>
+    <!-- FlexSlider -->
+    <script src="~/js2/jquery.flexslider-min.js"></script>
+    <!-- jQuery Anchor Plugin -->
+    <script src="~/js2/jquery.anchor.js"></script>
+    <!-- Respond JS for IE8 -->
+    <script src="~/js2/respond.min.js"></script>
+    <!-- HTML5 Support for IE -->
+    <script src="~/js2/html5shiv.js"></script>
+    <!-- Custom JS -->
+    <script src="~/js2/custom.js"></script>
+</head>
+<body>
+
+    <div data-role="page" data-theme="c">
+
+        <div data-role="header">
+            <h1>比賽賽程</h1>
+            <div>
+                <a href="/Home/Index">首頁</a>
+                <a href="/Home/Soccer">各國戰績</a>
+                <a href="/Home/Sand">模擬世界盃</a>
+            </div>
+        </div>
+
+        <div data-role="content">
+
+            <div class="row">
+
+                @{
+
+                    foreach (var em in Model)
+                    {
+                        <a href="/Home/Contact/@em.Id">
+                            <div class="col-md-4 col-sm-4">
+
+                                <div class="well">
+                                    <h3><span class="glyphicon glyphicon-star"></span>@em.country1</h3>
+
+                                    <p>
+                                        @em.score1
+                                    </p>
+
+                                    <hr>
+                                    <h3><sapn class="glyphicon glyphicon-star-empty"></sapn>@em.country2</h3>
+
+                                    <p>
+                                        @em.score2
+                                    </p>
+
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+
+
+
+
+            </div><!--end of content-->
+
+        </div>
+</body>
+</html>

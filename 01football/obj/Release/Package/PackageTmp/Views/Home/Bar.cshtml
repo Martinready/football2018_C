@@ -1,0 +1,66 @@
+﻿@model _01football.Models.team
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+    <button typeof="hidden" name="id" value="@Model.id">戰績</button>
+
+    <form typeof="hidden" method="post" data-ajax="false">
+        <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+
+	title:{
+		text:"@Model.couuntry"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "2018世界盃足球賽"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+        dataPoints: [
+            { y: @Model.score2, label: "SCORE2" },
+            { y: @Model.GP, label: "GP" },
+            { y: @Model.loseball, label: "LOSEBALL" },
+            { y: @Model.score, label: "SCORE" },
+            { y: @Model.lose, label: "LOSE" },
+            { y: @Model.flat, label: "FLAT" },
+            { y: @Model.win, label: "WIN" },
+			{ y: @Model.GD, label: "GD" },
+
+		]
+	}]
+});
+chart.render();
+
+}
+        </script>
+        <div class="ui-grid-a">
+            <div class="ui-block-a"><input type="submit" name="btnOKCancel" value="返回" /></div>
+
+        </div>
+    </form>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="~/scripts/scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/scripts/scripts/jquery.mobile-1.3.2.min.js"></script>
+    <link rel="stylesheet" href="~/scripts/scripts/jquery.mobile-1.3.2.min.css" />
+    <link rel="stylesheet" href="~/scripts/scripts/styles.css" />
+</body>
+</html>
+
+
+

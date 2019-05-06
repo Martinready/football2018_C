@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demoModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="country1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="score1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="country2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="score2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="img1" Type="nvarchar(max)" />
+    <Property Name="img2" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="couuntry" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GP" Type="nchar" MaxLength="10" />
+    <Property Name="win" Type="nchar" MaxLength="10" />
+    <Property Name="flat" Type="nchar" MaxLength="10" />
+    <Property Name="lose" Type="nchar" MaxLength="10" />
+    <Property Name="score" Type="nchar" MaxLength="10" />
+    <Property Name="loseball" Type="nchar" MaxLength="10" />
+    <Property Name="GD" Type="nchar" MaxLength="10" />
+    <Property Name="score2" Type="nchar" MaxLength="10" />
+    <Property Name="src" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="demoModel2StoreContainer">
+    <EntitySet Name="contacts" EntityType="Self.contacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teams" EntityType="Self.teams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

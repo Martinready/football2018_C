@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demoModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="score1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="score2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="demoEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="contacts" EntityType="Self.contact" />
+    <EntitySet Name="teams" EntityType="demoModel2.team" />
+  </EntityContainer>
+  <EntityType Name="team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="couuntry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="win" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="flat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="lose" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="score" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="loseball" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="score2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

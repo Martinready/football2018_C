@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shoppingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tmember">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fpwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="femail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="torder">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="forderguid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="freceiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="femail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="faddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fdate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="torderdetail">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="forderguid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fpid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fprice" Type="Int32" />
+    <Property Name="fqty" Type="Int32" />
+    <Property Name="fisapproved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tproduct">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fpid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fprice" Type="Int32" />
+    <Property Name="fimg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="shoppingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tmembers" EntityType="Self.tmember" />
+    <EntitySet Name="torders" EntityType="Self.torder" />
+    <EntitySet Name="torderdetails" EntityType="Self.torderdetail" />
+    <EntitySet Name="tproducts" EntityType="Self.tproduct" />
+  </EntityContainer>
+</Schema>

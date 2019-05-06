@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="demoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="demoModelStoreContainer">
+    <EntitySet Name="plans" EntityType="demoModel.Store.plans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="teams" EntityType="demoModel.Store.teams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="homes" EntityType="demoModel.Store.homes" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="plans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="name" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="price" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="DefaultImageId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="couuntry" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="GP" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="win" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="flat" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="lose" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="score" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="loseball" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="GD" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="score2" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="homes">
+    <Key>
+      <PropertyRef Name="picture" />
+    </Key>
+    <Property Name="picture" Type="varchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="demoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="plan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DefaultImageId" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="couuntry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="win" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="flat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="lose" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="score" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="loseball" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="GD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="score2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="home">
+          <Key>
+            <PropertyRef Name="picture" />
+          </Key>
+          <Property Name="picture" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="demoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="plans" EntityType="Self.plan" />
+          <EntitySet Name="teams" EntityType="Self.team" />
+          <EntitySet Name="homes" EntityType="Self.home" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demoModelStoreContainer" CdmEntityContainer="demoEntities">
+    <EntitySetMapping Name="plans">
+      <EntityTypeMapping TypeName="IsTypeOf(demoModel.plan)">
+        <MappingFragment StoreEntitySet="plans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="DefaultImageId" ColumnName="DefaultImageId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="IsTypeOf(demoModel.team)">
+        <MappingFragment StoreEntitySet="teams">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="couuntry" ColumnName="couuntry" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="win" ColumnName="win" />
+          <ScalarProperty Name="flat" ColumnName="flat" />
+          <ScalarProperty Name="lose" ColumnName="lose" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="loseball" ColumnName="loseball" />
+          <ScalarProperty Name="GD" ColumnName="GD" />
+          <ScalarProperty Name="score2" ColumnName="score2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="homes">
+      <EntityTypeMapping TypeName="IsTypeOf(demoModel.home)">
+        <MappingFragment StoreEntitySet="homes">
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

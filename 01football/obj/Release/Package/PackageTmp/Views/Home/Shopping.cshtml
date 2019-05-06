@@ -1,0 +1,120 @@
+﻿@model IEnumerable<_01football.Models.tproduct>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home - Home Page | Oktoberfest - Free Website Template from Templates.com</title>
+    <meta name="description" content="Place your description here">
+    <meta name="keywords" content="put, your, keyword, here">
+    <meta name="author" content="Templates.com - website templates provider">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css3/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css3/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css3/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="~/js3/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="~/js3/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/js3/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/js3/OrigGarmnd_BT_400.font.js"></script>
+    <script type="text/javascript" src="~/js3/script.js"></script>
+
+</head>
+<body id="page1">
+    <div class="body-bg wrap">
+        <!-- header -->
+        <header>
+            <div class="container">
+                <h1><a href="#">Brewery</a></h1>
+                <nav>
+                    <ul>
+                        <li class="current"><a href="/Home/Index"><span>Home</span></a></li>
+                        <li><a href="/Home/Login"><span>Login</span></a></li>
+                        <li><a href="/Home/Soccer"><span>Soccer</span></a></li>
+                        
+                    </ul>
+                </nav>
+                <div class="indent">
+                    <p><strong>Honey商店</strong></p>
+                </div>
+            </div>
+        </header>
+
+        <div>
+
+            <div class="row">
+                <section id="content">
+                    <div class="container">
+                        <div class="inside">
+                            <div class="indent">
+                                <h2>Recent Articles</h2>
+                                <ul class="box-list">
+                                    @{
+                                        foreach (var em in Model)
+                                        {
+                                            <li>
+                                                <div class="box">
+                                                    <div class="left-top-corner">
+                                                        <div class="right-top-corner">
+                                                            <div class="border-top"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="xcontent">
+                                                        <div class="border-left">
+                                                            <div class="border-right">
+                                                                <div class="inner">
+                                                                    <div class="img-box">
+                                                                        <img src="~/image/@em.fimg">
+                                                                        <h5>@em.fname</h5>
+                                                                        <p class="p0">$@em.fprice</p>
+                                                                        @if (Session["member"] == null)
+                                                                        {
+                                                                            <p></p>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <p><a href="@Url.Action("AddCar")?fpid=@em.fid" class="btn btn-primary">加入購物車 </a></p>
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="left-bot-corner">
+                                                        <div class="right-bot-corner">
+                                                            <div class="border-bot"><span class="clip-left"></span><span class="clip-right"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        }
+                                    }
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+
+
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="inside"><a rel="nofollow" href="http://www.templatemonster.com/" class="new_window">Website template</a> designed by TemplateMonster.com |  <a rel="nofollow" href="http://www.html5xcss3.com/" class="new_window">html5xcss3.com</a></div>
+        </div>
+    </footer>
+    <script type="text/javascript">Cufon.now();</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="demoModelStoreContainer">
+    <EntitySet Name="plans" EntityType="demoModel.Store.plans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="teams" EntityType="demoModel.Store.teams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="homes" EntityType="demoModel.Store.homes" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="plans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="name" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="price" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="DefaultImageId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="couuntry" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="GP" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="win" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="flat" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="lose" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="score" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="loseball" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="GD" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="score2" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="homes">
+    <Key>
+      <PropertyRef Name="picture" />
+    </Key>
+    <Property Name="picture" Type="varchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+</Schema>

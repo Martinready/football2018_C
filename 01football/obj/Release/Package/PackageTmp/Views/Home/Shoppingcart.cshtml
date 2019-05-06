@@ -1,0 +1,105 @@
+﻿@model IEnumerable<_01football.Models.torderdetail>
+
+@{
+    ViewBag.Title = "會員購物車清單";
+}
+
+@{
+    Layout = "~/Views/Shared/Shop.cshtml";
+}
+<link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<h2>會員購物清單</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.forderguid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuserid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fpid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fqty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fisapproved)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.forderguid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fuserid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fpid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fisapproved)
+            </td>
+            <td>
+                <a href="@Url.Action("DeleteCar")" ?fid="@item.fid" class="btn btn-danger">刪除購物車</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<form action="@Url.Action("Shpping")" method="post">
+    <div class="form-horizontal">
+        <h4>填寫訂單收件人資料</h4>
+        <hr />
+        <div class="form-group">
+            <span class="control-label col-md-2">收件人簽名</span>
+            <div class="col-md-10">
+                <input type="text" id="freceiver" name="freceiver" required="required" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">收件人信箱</span>
+            <div class="col-md-10">
+                <input type="text" id="femail" name="femail" required="required" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">收件人地址</span>
+            <div class="col-md-10">
+                <input type="text" id="faddress" name="faddress" required="required" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="確認訂購" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>

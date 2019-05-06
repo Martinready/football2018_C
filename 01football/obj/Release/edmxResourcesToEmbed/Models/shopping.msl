@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="shoppingModelStoreContainer" CdmEntityContainer="shoppingEntities">
+    <EntitySetMapping Name="tmembers">
+      <EntityTypeMapping TypeName="shoppingModel.tmember">
+        <MappingFragment StoreEntitySet="tmember">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="fuserid" ColumnName="fuserid" />
+          <ScalarProperty Name="fpwd" ColumnName="fpwd" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="femail" ColumnName="femail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="torders">
+      <EntityTypeMapping TypeName="shoppingModel.torder">
+        <MappingFragment StoreEntitySet="torder">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="forderguid" ColumnName="forderguid" />
+          <ScalarProperty Name="fuserid" ColumnName="fuserid" />
+          <ScalarProperty Name="freceiver" ColumnName="freceiver" />
+          <ScalarProperty Name="femail" ColumnName="femail" />
+          <ScalarProperty Name="faddress" ColumnName="faddress" />
+          <ScalarProperty Name="fdate" ColumnName="fdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="torderdetails">
+      <EntityTypeMapping TypeName="shoppingModel.torderdetail">
+        <MappingFragment StoreEntitySet="torderdetail">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="forderguid" ColumnName="forderguid" />
+          <ScalarProperty Name="fuserid" ColumnName="fuserid" />
+          <ScalarProperty Name="fpid" ColumnName="fpid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="fprice" ColumnName="fprice" />
+          <ScalarProperty Name="fqty" ColumnName="fqty" />
+          <ScalarProperty Name="fisapproved" ColumnName="fisapproved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tproducts">
+      <EntityTypeMapping TypeName="shoppingModel.tproduct">
+        <MappingFragment StoreEntitySet="tproduct">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="fpid" ColumnName="fpid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="fprice" ColumnName="fprice" />
+          <ScalarProperty Name="fimg" ColumnName="fimg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

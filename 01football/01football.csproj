@@ -1,0 +1,776 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E855C2B3-BBA0-4462-AB47-548D5C2B0FF2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_01football</RootNamespace>
+    <AssemblyName>01football</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\images\arrow.svg" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\jquery.poptrox.min.js" />
+    <Content Include="assets\js\jquery.scrolly.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\skel.min.js" />
+    <Content Include="assets\js\util.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="css\shop-homepage.css" />
+    <Content Include="Demo\assets\css\font-awesome.min.css" />
+    <Content Include="Demo\assets\css\images\arrow.svg" />
+    <Content Include="Demo\assets\css\main.css" />
+    <Content Include="Demo\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Demo\assets\js\jquery.min.js" />
+    <Content Include="Demo\assets\js\jquery.poptrox.min.js" />
+    <Content Include="Demo\assets\js\jquery.scrolly.min.js" />
+    <Content Include="Demo\assets\js\main.js" />
+    <Content Include="Demo\assets\js\skel.min.js" />
+    <Content Include="Demo\assets\js\util.js" />
+    <Content Include="Demo\CREDITS.txt" />
+    <Content Include="Demo\images\banner.jpg" />
+    <Content Include="Demo\images\banner.mp4" />
+    <Content Include="Demo\images\banner.webm" />
+    <Content Include="Demo\images\pic01.jpg" />
+    <Content Include="Demo\images\pic02.jpg" />
+    <Content Include="Demo\images\pic03.jpg" />
+    <Content Include="Demo\images\pic04.jpg" />
+    <Content Include="Demo\images\pic05.jpg" />
+    <Content Include="Demo\images\pic06.jpg" />
+    <Content Include="Demo\index.html" />
+    <Content Include="Demo\LICENSE.txt" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\1page-main-bg.png" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\banner.mp4" />
+    <Content Include="images\banner.webm" />
+    <Content Include="images\border-bot.gif" />
+    <Content Include="images\border-left.jpg" />
+    <Content Include="images\border-right.jpg" />
+    <Content Include="images\border-top.gif" />
+    <Content Include="images\bottom-bg.png" />
+    <Content Include="images\bottom-bg1.png" />
+    <Content Include="images\box-clip.png" />
+    <Content Include="images\box-tail.jpg" />
+    <Content Include="images\divider.gif" />
+    <Content Include="images\forms-tail.jpg" />
+    <Content Include="images\icon1.png" />
+    <Content Include="images\icon2.png" />
+    <Content Include="images\icon3.png" />
+    <Content Include="images\left-bot-corner.png" />
+    <Content Include="images\left-top-corner.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\main-bg.jpg" />
+    <Content Include="images\marker.gif" />
+    <Content Include="images\nav-act-left.png" />
+    <Content Include="images\nav-act-right.png" />
+    <Content Include="images\nav-bg.png" />
+    <Content Include="images\pic01.jpg" />
+    <Content Include="images\pic02.jpg" />
+    <Content Include="images\pic03.jpg" />
+    <Content Include="images\pic04.jpg" />
+    <Content Include="images\pic05.jpg" />
+    <Content Include="images\pic06.jpg" />
+    <Content Include="images\right-bot-corner.png" />
+    <Content Include="images\right-top-corner.png" />
+    <Content Include="images\tail-top.gif" />
+    <Content Include="image\cola.png" />
+    <Content Include="image\cola900.png" />
+    <Content Include="image\french-fries.jpg" />
+    <Content Include="image\french.png" />
+    <Content Include="image\fried chicken.jpeg" />
+    <Content Include="image\fried chicken900.jpg" />
+    <Content Include="image\hot greens.jpg" />
+    <Content Include="image\japan.png" />
+    <Content Include="image\popcorn.jpg" />
+    <Content Include="image\popcorn900.jpg" />
+    <Content Include="image\Republika Hrvatska.png" />
+    <Content Include="image\Russia.png" />
+    <Content Include="image\salad.jpg" />
+    <Content Include="image\sound.jpg" />
+    <Content Include="image\sound900.jpg" />
+    <Content Include="image\TV.jpeg" />
+    <Content Include="image\TV900.jpg" />
+    <Content Include="Login_v18\css\main.css" />
+    <Content Include="Login_v18\css\util.css" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login_v18\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Login_v18\fonts\montserrat\OFL.txt" />
+    <Content Include="Login_v18\images\bg-01.jpg" />
+    <Content Include="Login_v18\images\icons\favicon.ico" />
+    <Content Include="Login_v18\index.html" />
+    <Content Include="Login_v18\js\main.js" />
+    <Content Include="Login_v18\vendor\animate\animate.css" />
+    <Content Include="Login_v18\vendor\animsition\css\animsition.css" />
+    <Content Include="Login_v18\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Login_v18\vendor\animsition\js\animsition.js" />
+    <Content Include="Login_v18\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login_v18\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login_v18\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login_v18\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login_v18\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login_v18\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login_v18\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Login_v18\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login_v18\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login_v18\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Login_v18\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Login_v18\vendor\daterangepicker\moment.js" />
+    <Content Include="Login_v18\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Login_v18\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login_v18\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Login_v18\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Login_v18\vendor\select2\select2.css" />
+    <Content Include="Login_v18\vendor\select2\select2.js" />
+    <Content Include="Login_v18\vendor\select2\select2.min.css" />
+    <Content Include="Login_v18\vendor\select2\select2.min.js" />
+    <Content Include="Models\carts.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>carts.edmx</DependentUpon>
+      <LastGenOutput>carts.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\carts.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>carts.edmx</DependentUpon>
+      <LastGenOutput>carts.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.edmx.sql" />
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\shopping.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>shopping.edmx</DependentUpon>
+      <LastGenOutput>shopping.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\shopping.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>shopping.edmx</DependentUpon>
+      <LastGenOutput>shopping.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Demo\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Demo\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Demo\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Demo\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Demo\assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\scripts\images\ajax-loader.gif" />
+    <Content Include="Scripts\scripts\images\icons-18-black.png" />
+    <Content Include="Scripts\scripts\images\icons-18-white.png" />
+    <Content Include="Scripts\scripts\images\icons-36-black.png" />
+    <Content Include="Scripts\scripts\images\icons-36-white.png" />
+    <Content Include="Scripts\scripts\index.html" />
+    <Content Include="Scripts\scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\scripts\jquery.mobile-1.3.2.css" />
+    <Content Include="Scripts\scripts\jquery.mobile-1.3.2.js" />
+    <Content Include="Scripts\scripts\jquery.mobile-1.3.2.min.css" />
+    <Content Include="Scripts\scripts\jquery.mobile-1.3.2.min.js" />
+    <Content Include="Scripts\scripts\jquery.mobile.structure-1.3.2.css" />
+    <Content Include="Scripts\scripts\jquery.mobile.structure-1.3.2.min.css" />
+    <Content Include="Scripts\scripts\jquery.mobile.theme-1.3.2.css" />
+    <Content Include="Scripts\scripts\jquery.mobile.theme-1.3.2.min.css" />
+    <Content Include="Scripts\styles.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.slim.js" />
+    <Content Include="vendor\jquery\jquery.slim.min.js" />
+    <Content Include="css2\bootstrap.css" />
+    <Content Include="css2\bootstrap.min.css" />
+    <Content Include="css2\flexslider.css" />
+    <Content Include="css2\font-awesome.min.css" />
+    <Content Include="css2\style.css" />
+    <Content Include="js2\bootstrap.min.js" />
+    <Content Include="js2\custom.js" />
+    <Content Include="js2\html5shiv.js" />
+    <Content Include="js2\jquery.anchor.js" />
+    <Content Include="js2\jquery.flexslider-min.js" />
+    <Content Include="js2\jquery.js" />
+    <Content Include="js2\respond.min.js" />
+    <Content Include="css3\layout.css" />
+    <Content Include="css3\reset.css" />
+    <Content Include="css3\style.css" />
+    <Content Include="js3\cufon-replace.js" />
+    <Content Include="js3\cufon-yui.js" />
+    <Content Include="js3\html5.js" />
+    <Content Include="js3\jquery-1.4.2.min.js" />
+    <Content Include="js3\OrigGarmnd_BT_400.font.js" />
+    <Content Include="js3\script.js" />
+    <Content Include="__MACOSX\Login_v18\._index.html" />
+    <Content Include="__MACOSX\Login_v18\css\._main.css" />
+    <Content Include="__MACOSX\Login_v18\css\._util.css" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\._HELP-US-OUT.txt" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\css\._font-awesome.css" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\css\._font-awesome.min.css" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.svg" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\._icon-font.min.css" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\._Linearicons-Free.svg" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._OFL.txt" />
+    <Content Include="__MACOSX\Login_v18\images\._bg-01.jpg" />
+    <Content Include="__MACOSX\Login_v18\images\icons\._favicon.ico" />
+    <Content Include="__MACOSX\Login_v18\js\._main.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\animate\._animate.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\animsition\css\._animsition.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\animsition\css\._animsition.min.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\animsition\js\._animsition.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\animsition\js\._animsition.min.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-grid.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-grid.min.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-reboot.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-reboot.min.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap.min.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\js\._bootstrap.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\js\._bootstrap.min.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\js\._popper.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\js\._popper.min.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\js\._tooltip.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\countdowntime\._countdowntime.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\css-hamburgers\._hamburgers.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\css-hamburgers\._hamburgers.min.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\daterangepicker\._daterangepicker.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\daterangepicker\._daterangepicker.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\daterangepicker\._moment.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\daterangepicker\._moment.min.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\jquery\._jquery-3.2.1.min.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\perfect-scrollbar\._perfect-scrollbar.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\perfect-scrollbar\._perfect-scrollbar.min.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\select2\._select2.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\select2\._select2.js" />
+    <Content Include="__MACOSX\Login_v18\vendor\select2\._select2.min.css" />
+    <Content Include="__MACOSX\Login_v18\vendor\select2\._select2.min.js" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login_v18\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Login_v18\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Login_v18\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login_v18\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\carts.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>carts.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\carts.edmx.diagram">
+      <DependentUpon>carts.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model2.edmx.diagram">
+      <DependentUpon>Model2.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\shopping.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>shopping.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\shopping.edmx.diagram">
+      <DependentUpon>shopping.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\footbal - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="__MACOSX\._Login_v18" />
+    <Content Include="__MACOSX\Login_v18\._css" />
+    <Content Include="__MACOSX\Login_v18\._fonts" />
+    <Content Include="__MACOSX\Login_v18\._images" />
+    <Content Include="__MACOSX\Login_v18\._js" />
+    <Content Include="__MACOSX\Login_v18\._vendor" />
+    <Content Include="__MACOSX\Login_v18\fonts\._font-awesome-4.7.0" />
+    <Content Include="__MACOSX\Login_v18\fonts\._Linearicons-Free-v1.0.0" />
+    <Content Include="__MACOSX\Login_v18\fonts\._montserrat" />
+    <Content Include="__MACOSX\Login_v18\fonts\._poppins" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\._css" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\._fonts" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\._less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\._scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.eot" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.woff" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.woff2" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\fonts\._FontAwesome.otf" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._animated.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._bordered-pulled.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._core.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._fixed-width.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._font-awesome.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._icons.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._larger.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._list.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._mixins.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._path.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._rotated-flipped.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._screen-reader.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._stacked.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\less\._variables.less" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\._font-awesome.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__animated.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__bordered-pulled.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__core.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__fixed-width.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__icons.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__larger.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__list.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__mixins.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__path.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__rotated-flipped.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__screen-reader.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__stacked.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\font-awesome-4.7.0\scss\.__variables.scss" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\._WebFont" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\._Linearicons-Free.eot" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\._Linearicons-Free.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\._Linearicons-Free.woff" />
+    <Content Include="__MACOSX\Login_v18\fonts\Linearicons-Free-v1.0.0\WebFont\._Linearicons-Free.woff2" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Black.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-BlackItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Bold.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-BoldItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-ExtraBold.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-ExtraLight.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Italic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Light.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-LightItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Medium.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-MediumItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Regular.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-SemiBold.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-Thin.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\montserrat\._Montserrat-ThinItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Black.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-BlackItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Bold.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-BoldItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-ExtraBold.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-ExtraLight.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-ExtraLightItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Italic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Light.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-LightItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Medium.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-MediumItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Regular.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-SemiBold.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-SemiBoldItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-Thin.ttf" />
+    <Content Include="__MACOSX\Login_v18\fonts\poppins\._Poppins-ThinItalic.ttf" />
+    <Content Include="__MACOSX\Login_v18\images\._icons" />
+    <Content Include="__MACOSX\Login_v18\vendor\._animate" />
+    <Content Include="__MACOSX\Login_v18\vendor\._animsition" />
+    <Content Include="__MACOSX\Login_v18\vendor\._bootstrap" />
+    <Content Include="__MACOSX\Login_v18\vendor\._countdowntime" />
+    <Content Include="__MACOSX\Login_v18\vendor\._css-hamburgers" />
+    <Content Include="__MACOSX\Login_v18\vendor\._daterangepicker" />
+    <Content Include="__MACOSX\Login_v18\vendor\._jquery" />
+    <Content Include="__MACOSX\Login_v18\vendor\._perfect-scrollbar" />
+    <Content Include="__MACOSX\Login_v18\vendor\._select2" />
+    <Content Include="__MACOSX\Login_v18\vendor\animsition\._css" />
+    <Content Include="__MACOSX\Login_v18\vendor\animsition\._js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\._css" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\._js" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-grid.css.map" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-grid.min.css.map" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-reboot.css.map" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap-reboot.min.css.map" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap.css.map" />
+    <Content Include="__MACOSX\Login_v18\vendor\bootstrap\css\._bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\carts.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carts.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\carts.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\carts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carts.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\contact.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\home.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\plan.cs">
+      <DependentUpon>carts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shopping.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shopping.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shopping.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shopping.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shopping.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\team.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tmember.cs">
+      <DependentUpon>shopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\torder.cs">
+      <DependentUpon>shopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\torderdetail.cs">
+      <DependentUpon>shopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tproduct.cs">
+      <DependentUpon>shopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\Shop.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Member.cshtml" />
+    <Content Include="Views\Home\Soccer.cshtml" />
+    <Content Include="Views\Home\Bar.cshtml" />
+    <Content Include="Scripts\scripts\jquery.mobile-1.3.2.min.map" />
+    <Content Include="Views\Home\game.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Shopping.cshtml" />
+    <Content Include="Views\Home\Tv.cshtml" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="vendor\jquery\jquery.min.map" />
+    <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\Shared\_Layoutmember.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Shoppingcart.cshtml" />
+    <Content Include="Views\Home\OrderList.cshtml" />
+    <Content Include="Views\Home\OrderDetail.cshtml" />
+    <Content Include="Views\Home\Sand.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8570</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8570/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
